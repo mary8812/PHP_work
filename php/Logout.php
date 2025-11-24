@@ -12,10 +12,10 @@
     <?php
         session_start();
         if(isset($_POST['logout'])){
-            unset($_SESSION['name']);
-            header("location: Login.php");
+            unset($_SESSION['username']);
+            header("location: ../index.php");
         }
-        if(isset($_COOKIE["name"]) && $_SESSION['name']){
+        if(isset($_COOKIE["username"]) && $_SESSION['username']){
             header("location: Login.php");
         }
     ?>

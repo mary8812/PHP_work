@@ -16,23 +16,23 @@ require "Logout.php";
     <table>
         <tr>
             <th>Name</th>
-            <th>Username</th>
+            <th>Email</th>
             <th>Action</th>
         </tr>
         
         <?php
 
-            $query = mysqli_query($conn,"select * from employee");
+            $query = mysqli_query($conn,"select * from users");
 
             while($row= mysqli_fetch_array($query)){
 
                 echo "
                     <tr>
-                        <td>".$row["name"]."</td>
-                        <td>".$row['username']."</td>
+                        <td>".$row["username"]."</td>
+                        <td>".$row['email']."</td>
                         <td>
-                            <a href='Update.php?update_id=".$row["id"]."'>Update</a>
-                            <a href='Delete.php?delete_id=".$row["id"]."'>delete</a>
+                            <a href='Update.php?update_id=".$row["user_id"]."'>Update</a>
+                            <a href='Delete.php?delete_id=".$row["user_id"]."'>delete</a>
                         </td>
                     </tr>
                 ";

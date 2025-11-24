@@ -1,8 +1,7 @@
-<?php
-$num = 0;
-$mult = 3;
-do{
-    $num++;
-    echo $mult. " * " . $num ." = ".$mult*$num."<br>";
-}while($num <10);
+<php?
+for($i=1; $i<=10; $i++){
+    if($i % ==3){
+    continue;
+}
+echo $i;
 ?>

@@ -1,4 +1,3 @@
-
 <?php
     require "Connection.php";
     require "Logout.php";
@@ -16,8 +15,9 @@
 <body>
     <form method="POST">
         <h2>Update account</h2>
-        <input type="text" name="name" value="<?php echo $values['name'] ?>">
+        
         <input type="text" name="username" value="<?php echo $values['username'] ?>">
+        <input type="text" name="email" value="<?php echo $values['email'] ?>">
         <input type="password" name="password" value="<?php echo $values['password'] ?>">
         <button name="button">Update</button>
     </form>
@@ -26,11 +26,11 @@
 
         if(isset($_POST['button'])){
             
-            $name = $_POST['name'];
-            $username = $_POST["username"];
+           $username = $_POST["username"];
+            $email = $_POST["email"];
             $password = $_POST["password"];
 
-            $query = "update employee set name='$name',username='$username',password='$password' where id=$id";
+            $query = "update users set username='$username',email='$email',password='$password' where id=$id";
 
             if(mysqli_query($conn, $query)) {
                 header("location: Display.php");
@@ -44,5 +44,3 @@
     ?>
 </body>
 </html>
-
-
